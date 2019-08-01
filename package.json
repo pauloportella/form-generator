@@ -3,7 +3,6 @@
   "description": "Form generator based on Formik",
   "version": "0.1.1-0",
   "license": "MIT",
-  "private": true,
   "author": "Paulo Portella",
   "repository": "https://github.com/pauloportella/form-generator",
   "main": "dist/index.js",
