@@ -14,6 +14,12 @@ declare enum FieldType {
   DATE_PICKER = ' DATE_PICKER',
 }
 
+declare enum ValidationRules {
+  DEFAULT = 'DEFAULT',
+  DATE = 'DATE',
+  CURRENCY = 'CURRENCY',
+}
+
 interface IOptions {
   label: string;
   value: string;
@@ -33,6 +39,6 @@ interface IField {
     | Yup.NumberSchema
     | Yup.BooleanSchema
     | Yup.DateSchema;
-  type?: RadioTypes | string;
+  type?: string;
   inputProps?: any;
 }
