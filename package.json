@@ -1,6 +1,11 @@
 {
   "name": "form-generator",
+  "description": "Form generator based on Formik",
   "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "author": "Paulo Portella",
+  "repository": "https://github.com/pauloportella/form-generator",
   "main": "dist/index.js",
   "module": "dist/form-generator.esm.js",
   "typings": "dist/index.d.ts",
@@ -43,5 +48,9 @@
     "tslib": "^1.10.0",
     "typescript": "^3.5.3",
     "yup": "^0.27.0"
+  },
+  "np": {
+    "yarn": true,
+    "contents": "dist"
   }
 }
