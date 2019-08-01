@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import { FormikValues } from 'formik';
+import { getNames } from 'country-list';
 
 export function getInitialValues(fields: IField[]): FormikValues {
   return fields.reduce((acc, { id, initialValue }) => {
@@ -39,4 +40,12 @@ export function getValueFromOptions({
   if (result) return result.label;
 
   return value;
+}
+
+export function getCountryOptions(): IOptions {
+  const names = getNames();
+  return names.map((name: string) => ({
+    label: name,
+    value: name,
+  }));
 }
