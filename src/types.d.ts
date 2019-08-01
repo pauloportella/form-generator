@@ -2,6 +2,8 @@ import React from 'react';
 import * as Yup from 'yup';
 
 declare global {
+  export type InitialValue = string | number | {};
+
   export enum FieldType {
     TEXT = 'TEXT',
     NUMERIC = 'NUMERIC',
@@ -31,7 +33,7 @@ declare global {
     label: string;
     multiline?: boolean;
     options?: IOptions[];
-    initialValue?: string | number | {};
+    initialValue?: InitialValue;
     fieldType?: FieldType;
     disableOnUpdate?: boolean;
     validation:
