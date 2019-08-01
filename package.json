@@ -1,5 +1,5 @@
 {
-  "name": "form-generator",
+  "name": "@pauloportella/form-generator",
   "description": "Form generator based on Formik",
   "version": "0.1.1-1",
   "license": "MIT",
