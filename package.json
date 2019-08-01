@@ -1,7 +1,7 @@
 {
   "name": "@pauloportella/form-generator",
   "description": "Form generator based on Formik",
-  "version": "0.1.1-1",
+  "version": "0.1.1-2",
   "license": "MIT",
   "private": true,
   "author": "Paulo Portella",
