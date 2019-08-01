@@ -16,18 +16,46 @@ export interface IFormFieldProps {
   disabled: boolean;
 }
 
-function SingleField({
-  id: label,
-  select,
+export function FormField({
+  id,
+  label,
+  type = 'text',
+  component,
   value,
+  select,
   options,
   multiline,
-  component,
   onChange,
   onBlur,
-  type,
   inputProps,
   disabled,
 }: IFormFieldProps): React.ReactElement {
-  return;
+  const optionsJSX = options && generateOptions(options);
+
+  return (
+    <React.Fragment key={id}>
+      <Field
+        {...inputProps}
+        id={id}
+        name={id}
+        label={label}
+        type={type}
+        component={component}
+        value={value}
+        select={select}
+        multiline={multiline}
+        onChange={onChange}
+        onBlur={onBlur}
+        disabled={disabled}
+      >
+        {optionsJSX}
+      </Field>
+    </React.Fragment>
+  );
+}
+
+function generateOptions(options: IOptions[]) {
+  return options.map(({ label, value }, index) => (
+    <option key={index} value={value} children={label} />
+  ));
 }
