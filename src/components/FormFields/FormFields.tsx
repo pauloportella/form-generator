@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormField } from 'components';
-import { getField } from 'services/form';
+import { FormField } from '../FormField/FormField';
+import { getField, FieldType } from '../../services/forms';
 import { FormikProps } from 'formik';
 
 export interface IFormFieldsProps {
@@ -24,20 +24,20 @@ export function FormFields({
           label,
           fieldType = FieldType.TEXT,
           options,
-          multiline = false,
+          // multiline = false,
           type,
 
           disableOnUpdate = false,
         }) => {
-          const isSelect = Boolean(options && options.length);
+          // const isSelect = Boolean(options && options.length);
 
           return (
             <FormField
               key={id}
               id={id}
               label={label}
-              select={isSelect}
-              multiline={multiline}
+              // select={isSelect}
+              // multiline={multiline}
               value={values[id]}
               options={options}
               component={getField(fieldType)}
