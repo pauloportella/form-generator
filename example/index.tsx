@@ -3,13 +3,18 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Yup from 'yup';
 import { Form } from '../.';
-import { getInitialValues, FieldType } from '../src/services/forms';
+import { getInitialValues } from '../src/services/forms';
+
+const Input = (props: any): React.ReactElement => {
+  return <input {...props.field} />;
+};
 
 const fields = [
   {
+    component: Input,
     disableOnUpdate: true,
-    fieldType: FieldType.TEXT,
     id: 'buyerName',
+    initialValue: 'Hello',
     label: 'buyerName',
     validation: Yup.string().required(),
   },
@@ -18,11 +23,10 @@ const fields = [
 const initialValues = getInitialValues(fields);
 
 const propsFn = () => ({
-  title: 'Form Generator',
+  title: 'Form Generatorr',
   onSubmit: (values: any) => console.log(values),
   fields: fields,
   initialValues: initialValues,
-  isUpdate: false,
 });
 
 const App = () => {

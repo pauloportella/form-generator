@@ -7,7 +7,6 @@ export function Form({
   title,
   fields,
   initialValues,
-  isUpdate,
   onSubmit,
 }: IFormProps): React.ReactElement {
   const validationSchema = generateValidationSchema(fields);
@@ -16,6 +15,7 @@ export function Form({
     onSubmit(values);
     actions.setSubmitting(false);
   }
+
   return (
     <>
       <h1 data-testid="title">{title}</h1>
@@ -27,11 +27,16 @@ export function Form({
         render={(props: FormikProps<any>) => {
           return (
             <FormikForm>
-              <FormFields
-                fields={fields}
-                formikProps={props}
-                isUpdate={isUpdate}
-              />
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '100vw',
+                }}
+              >
+                <FormFields fields={fields} formikProps={props} />
+                <button type="submit">Submit</button>
+              </div>
             </FormikForm>
           );
         }}

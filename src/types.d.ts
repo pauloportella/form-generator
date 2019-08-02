@@ -1,8 +1,6 @@
 import React from 'react';
 import * as Yup from 'yup';
 
-import { FieldType } from 'services/forms';
-
 declare global {
   export type InitialValue = string | number | {};
 
@@ -15,7 +13,6 @@ declare global {
     // onCancel: (arg0?: any) => void;
     fields: IField[];
     initialValues: any;
-    isUpdate: boolean;
   }
 
   export enum ValidationRules {
@@ -35,8 +32,7 @@ declare global {
     multiline?: boolean;
     options?: IOptions[];
     initialValue?: InitialValue;
-    fieldType?: FieldType;
-    disableOnUpdate?: boolean;
+    component?: React.ReactNode;
     validation?:
       | Yup.MixedSchema
       | Yup.StringSchema
