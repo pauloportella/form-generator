@@ -4,17 +4,16 @@ import * as Yup from 'yup';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import { getInitialValues } from '../src/services/forms';
+import { getInitialValues, FieldType } from '../src/services/forms';
 
 import { Form } from '../src';
-import { FieldType } from '../src/services/forms';
 
 const fields = [
   {
-    id: 'buyerName',
-    label: 'buyerName',
     disableOnUpdate: true,
     fieldType: FieldType.TEXT,
+    id: 'buyerName',
+    label: 'buyerName',
     validation: Yup.string().required(),
   },
 ];
