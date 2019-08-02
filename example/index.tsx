@@ -13,7 +13,6 @@ const fields = [
   {
     component: Input,
     disableOnUpdate: true,
-
     id: 'buyerName',
     initialValue: 'Hello',
     label: 'buyerName',
