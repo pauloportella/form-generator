@@ -15,7 +15,6 @@ const Input = (props: any): React.ReactElement => {
 const fields = [
   {
     component: Input,
-    disableOnUpdate: true,
     id: 'buyerName',
     initialValue: 'Hello',
     label: 'buyerName',
