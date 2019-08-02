@@ -12,7 +12,7 @@ export function getInitialValues(fields: IField[]): FormikValues {
   }, {});
 }
 
-export function getValidationSchema(fields: IField[]): Yup.Schema<any> {
+export function generateValidationSchema(fields: IField[]): Yup.Schema<any> {
   const obj = fields.reduce((acc, { id, validation }) => {
     return {
       ...acc,

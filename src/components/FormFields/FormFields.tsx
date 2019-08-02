@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormField } from 'components';
-import { getField } from 'services/form';
+import { getField } from 'services/forms';
 import { FormikProps } from 'formik';
 
 export interface IFormFieldsProps {
