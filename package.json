@@ -14,7 +14,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --env=jsdom"
+    "test": "tsdx test --env=jsdom --watchAll --coverage && cat ./coverage/lcov.info | codacy-coverage --token ced9262077bc4c8e925a65fefe4c49ab --username pauloportella --projectName form-generator"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -39,6 +39,7 @@
     "@types/react": "^16.8.24",
     "@types/react-dom": "^16.8.5",
     "@types/yup": "^0.26.22",
+    "codacy-coverage": "^3.4.0",
     "country-list": "^2.1.1",
     "formik": "^1.5.8",
     "husky": "^3.0.2",
