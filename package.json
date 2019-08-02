@@ -14,7 +14,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --env=jsdom --watchAll",
+    "test": "tsdx test --env=jsdom",
     "coverage": "tsdx test --env=jsdom --coverage && cat ./coverage/lcov.info | codacy-coverage --token ced9262077bc4c8e925a65fefe4c49ab --username pauloportella --projectName form-generator"
   },
   "peerDependencies": {
