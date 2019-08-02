@@ -38,11 +38,7 @@ const propsFn = () => ({
 });
 
 const App = () => {
-  return (
-    <div>
-      <Form {...propsFn()} />
-    </div>
-  );
+  return <Form {...propsFn()} />;
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
