@@ -29,7 +29,13 @@ export function Form({
           return (
             <FormikForm>
               <FormFields fields={fields} formikProps={props} />
-              <FormField id="name" label="name" value="Paulo" />
+              <FormField
+                id="name"
+                label="name"
+                value="Paulo"
+                onChange={props.handleChange}
+                onBlur={props.handleBlur}
+              />
             </FormikForm>
           );
         }}

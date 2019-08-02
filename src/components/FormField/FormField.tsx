@@ -8,7 +8,7 @@ export interface IFormFieldProps {
   value: InitialValue;
   options?: any[];
   // multiline: boolean;
-  component: React.ReactNode;
+  component?: React.ReactNode;
   onChange: FormikHandlers['handleChange'];
   onBlur: FormikHandlers['handleBlur'];
   type?: string;
