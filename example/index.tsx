@@ -6,16 +6,25 @@ import { getInitialValues } from '../src/services/forms';
 import { Form } from '../.';
 
 const Input = (props: any): React.ReactElement => {
-  return <input {...props.field} />;
+  return <input {...props.field} placeholder={props.label} />;
 };
 
 const fields = [
   {
     component: Input,
-    id: 'buyerName',
-    initialValue: 'Hello',
-    label: 'buyerName',
+    id: 'name',
+    initialValue: '',
+    label: 'Name',
     validation: Yup.string().required(),
+    type: 'text',
+  },
+  {
+    component: Input,
+    id: 'city',
+    initialValue: '',
+    label: 'City',
+    validation: Yup.string().required(),
+    type: 'text',
   },
 ];
 
