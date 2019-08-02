@@ -9,7 +9,7 @@ declare global {
     legend?: string;
     // submitText: string;
     // cancelText: string;
-    onSubmit: (arg0?: any) => void;
+    onSubmit: (values: any) => void;
     // onCancel: (arg0?: any) => void;
     fields: IField[];
     initialValues: any;
