@@ -1,13 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 import { Field, FormikHandlers } from 'formik';
 
 export interface IFormFieldProps {
   id: string;
   label: string;
-  select: boolean;
+  // select: boolean;
   value: InitialValue;
   options?: any[];
-  multiline: boolean;
+  // multiline: boolean;
   component: React.ReactNode;
   onChange: FormikHandlers['handleChange'];
   onBlur: FormikHandlers['handleBlur'];
@@ -21,9 +21,9 @@ export function FormField({
   type = 'text',
   component,
   value,
-  select,
+  // select,
   options,
-  multiline,
+  // multiline,
   onChange,
   onBlur,
   disabled,
@@ -39,8 +39,8 @@ export function FormField({
         type={type}
         component={component}
         value={value}
-        select={select}
-        multiline={multiline}
+        // select={select}
+        // multiline={multiline}
         onChange={onChange}
         onBlur={onBlur}
         disabled={disabled}

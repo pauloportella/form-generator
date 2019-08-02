@@ -1,4 +1,2 @@
-import { FormField } from './FormField/FormField';
-import { FormFields } from './FormFields/FormFields';
-
-export { FormField, FormFields };
+export { FormField } from './FormField/FormField';
+export { FormFields } from './FormFields/FormFields';

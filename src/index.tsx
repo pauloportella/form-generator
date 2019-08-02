@@ -1,16 +1,14 @@
 import * as React from 'react';
-
 import { Formik, Form as FormikForm, FormikActions, FormikProps } from 'formik';
-import { generateValidationSchema } from 'services/forms';
-import { FormFields } from 'components';
+import { generateValidationSchema } from './services/forms';
+import { FormFields } from './components/FormFields/FormFields';
 
 export function Form({
   title,
-  // legend,
   fields,
-  onSubmit,
   initialValues,
   isUpdate,
+  onSubmit,
 }: IFormProps): React.ReactElement {
   const validationSchema = generateValidationSchema(fields);
 

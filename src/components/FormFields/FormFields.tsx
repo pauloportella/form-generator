@@ -1,7 +1,9 @@
 import React from 'react';
-import { FormField } from 'components';
-import { getField } from 'services/forms';
+import { FormField } from '../FormField/FormField';
+import { getField } from '../../services/forms';
 import { FormikProps } from 'formik';
+
+import { FieldType } from '../../services/forms';
 
 export interface IFormFieldsProps {
   fields: IField[];

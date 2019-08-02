@@ -1,6 +1,8 @@
 import React from 'react';
 import * as Yup from 'yup';
 
+import { FieldType } from 'services/forms';
+
 declare global {
   export type InitialValue = string | number | {};
 
@@ -14,19 +16,6 @@ declare global {
     fields: IField[];
     initialValues: any;
     isUpdate: boolean;
-  }
-
-  export enum FieldType {
-    TEXT = 'TEXT',
-    NUMERIC = 'NUMERIC',
-    CHECKBOX = 'CHECKBOX',
-    SELECT = 'SELECT',
-    MULTI_SELECT = 'MULTI_SELECT',
-    SEARCH_SELECT = 'SEARCH_SELECT',
-    RADIO_BUTTON = 'RADIO_BUTTON',
-    RADIO_INPUT = 'RADIO_INPUT',
-    TEXT_AREA = 'TEXT_AREA',
-    DATE_PICKER = ' DATE_PICKER',
   }
 
   export enum ValidationRules {
@@ -48,7 +37,7 @@ declare global {
     initialValue?: InitialValue;
     fieldType?: FieldType;
     disableOnUpdate?: boolean;
-    validation:
+    validation?:
       | Yup.MixedSchema
       | Yup.StringSchema
       | Yup.NumberSchema
