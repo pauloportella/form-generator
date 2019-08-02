@@ -10,6 +10,7 @@ const fields = [
     disableOnUpdate: true,
     fieldType: FieldType.TEXT,
     id: 'buyerName',
+    initialValue: 'Hello',
     label: 'buyerName',
     validation: Yup.string().required(),
   },
@@ -18,7 +19,7 @@ const fields = [
 const initialValues = getInitialValues(fields);
 
 const propsFn = () => ({
-  title: 'Form Generator',
+  title: 'Form Generator Demo',
   onSubmit: (values: any) => console.log(values),
   fields: fields,
   initialValues: initialValues,
@@ -26,6 +27,7 @@ const propsFn = () => ({
 });
 
 const App = () => {
+  console.log(propsFn());
   return (
     <div>
       <Form {...propsFn()} />
