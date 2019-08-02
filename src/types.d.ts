@@ -43,6 +43,5 @@ declare global {
       | Yup.BooleanSchema
       | Yup.DateSchema;
     type?: string;
-    inputProps?: any;
   }
 }

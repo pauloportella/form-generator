@@ -5,14 +5,13 @@ export interface IFormFieldProps {
   id: string;
   label: string;
   select: boolean;
-  value: any;
+  value: InitialValue;
   options?: any[];
   multiline: boolean;
   component: React.ReactNode;
   onChange: FormikHandlers['handleChange'];
   onBlur: FormikHandlers['handleBlur'];
   type?: string;
-  inputProps?: any;
   disabled: boolean;
 }
 
@@ -27,7 +26,6 @@ export function FormField({
   multiline,
   onChange,
   onBlur,
-  inputProps,
   disabled,
 }: IFormFieldProps): React.ReactElement {
   const optionsJSX = options && generateOptions(options);
@@ -35,7 +33,6 @@ export function FormField({
   return (
     <React.Fragment key={id}>
       <Field
-        {...inputProps}
         id={id}
         name={id}
         label={label}
@@ -54,7 +51,7 @@ export function FormField({
   );
 }
 
-function generateOptions(options: IOptions[]) {
+function generateOptions(options: IOptions[]): React.ReactNode {
   return options.map(({ label, value }, index) => (
     <option key={index} value={value} children={label} />
   ));

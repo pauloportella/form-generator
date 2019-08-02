@@ -1,14 +1,15 @@
 import React from 'react';
 import { FormField } from 'components';
 import { getField } from 'services/form';
+import { FormikProps } from 'formik';
 
 export interface IFormFieldsProps {
   fields: IField[];
-  formikProps: any;
+  formikProps: FormikProps<any>;
   isUpdate: boolean;
 }
 
-export default function FormFields({
+export function FormFields({
   fields,
   formikProps,
   isUpdate,
@@ -25,7 +26,7 @@ export default function FormFields({
           options,
           multiline = false,
           type,
-          inputProps,
+
           disableOnUpdate = false,
         }) => {
           const isSelect = Boolean(options && options.length);
@@ -43,7 +44,6 @@ export default function FormFields({
               onChange={handleChange}
               onBlur={handleBlur}
               type={type}
-              inputProps={inputProps}
               disabled={isUpdate && disableOnUpdate}
             />
           );
