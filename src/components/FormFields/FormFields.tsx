@@ -26,7 +26,7 @@ export function FormFields({
           options,
           multiline = false,
           type,
-          inputProps,
+
           disableOnUpdate = false,
         }) => {
           const isSelect = Boolean(options && options.length);
@@ -44,7 +44,6 @@ export function FormFields({
               onChange={handleChange}
               onBlur={handleBlur}
               type={type}
-              inputProps={inputProps}
               disabled={isUpdate && disableOnUpdate}
             />
           );
