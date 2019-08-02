@@ -1,14 +1,20 @@
 import * as React from 'react';
-import { Formik, Form as FormikForm, FormikActions, FormikProps } from 'formik';
+import {
+  Formik,
+  Form as FormikForm,
+  FormikActions,
+  FormikProps,
+  FormikValues,
+} from 'formik';
 import { generateValidationSchema } from './services/forms';
 import { FormFields } from './components/FormFields/FormFields';
 
 export interface FormProps {
   title: string;
   legend?: string;
-  onSubmit: (values: any) => void;
+  onSubmit: (values: FormikValues) => void;
   fields: IField[];
-  initialValues: any;
+  initialValues: FormikValues;
 }
 
 export function Form({
@@ -19,7 +25,7 @@ export function Form({
 }: FormProps): React.ReactElement {
   const validationSchema = generateValidationSchema(fields);
 
-  function handleSubmit(values: any, actions: FormikActions<any>) {
+  function handleSubmit(values: FormikValues, actions: FormikActions<any>) {
     onSubmit(values);
     actions.setSubmitting(false);
   }
