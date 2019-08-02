@@ -4,14 +4,14 @@ import * as Yup from 'yup';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import { getInitialValues, FieldType } from '../src/services/forms';
+import { getInitialValues } from '../src/services/forms';
 
 import { Form } from '../src';
 
 const fields = [
   {
     disableOnUpdate: true,
-    fieldType: FieldType.TEXT,
+
     id: 'buyerName',
     initialValue: 'Hello',
     label: 'buyerName',

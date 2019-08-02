@@ -1,8 +1,6 @@
 import React from 'react';
 import * as Yup from 'yup';
 
-import { FieldType } from 'services/forms';
-
 declare global {
   export type InitialValue = string | number | {};
 
@@ -34,7 +32,6 @@ declare global {
     multiline?: boolean;
     options?: IOptions[];
     initialValue?: InitialValue;
-    fieldType?: FieldType;
     component?: React.ReactNode;
     validation?:
       | Yup.MixedSchema

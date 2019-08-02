@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Formik, Form as FormikForm, FormikActions, FormikProps } from 'formik';
 import { generateValidationSchema } from './services/forms';
 import { FormFields } from './components/FormFields/FormFields';
-import { FormField } from './components/FormField/FormField';
 
 export function Form({
   title,
@@ -16,8 +15,9 @@ export function Form({
     onSubmit(values);
     actions.setSubmitting(false);
   }
+
   return (
-    <div>
+    <>
       <h1 data-testid="title">{title}</h1>
 
       <Formik
@@ -25,21 +25,22 @@ export function Form({
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
         render={(props: FormikProps<any>) => {
-          console.log('form', props);
           return (
             <FormikForm>
-              <FormFields fields={fields} formikProps={props} />
-              <FormField
-                id="name"
-                label="name"
-                value="Paulo"
-                onChange={props.handleChange}
-                onBlur={props.handleBlur}
-              />
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '100vw',
+                }}
+              >
+                <FormFields fields={fields} formikProps={props} />
+                <button type="submit">Submit</button>
+              </div>
             </FormikForm>
           );
         }}
       />
-    </div>
+    </>
   );
 }
