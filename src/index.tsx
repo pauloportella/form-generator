@@ -3,7 +3,7 @@ import * as React from 'react';
 
 export interface IFormProps {
   title: string;
-  // legend?: string;
+  legend?: string;
   // submitText: string;
   // cancelText: string;
   // onSubmit: (arg0?: any) => void;
