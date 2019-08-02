@@ -8,10 +8,14 @@ import { getInitialValues } from '../src/services/forms';
 
 import { Form } from '../src';
 
+const Input = (props: any): React.ReactElement => {
+  return <input {...props.field} />;
+};
+
 const fields = [
   {
+    component: Input,
     disableOnUpdate: true,
-
     id: 'buyerName',
     initialValue: 'Hello',
     label: 'buyerName',

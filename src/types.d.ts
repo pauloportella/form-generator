@@ -2,7 +2,7 @@ import React from 'react';
 import * as Yup from 'yup';
 
 declare global {
-  export type InitialValue = string | number | {};
+  type InitialValue = string | number | {};
 
   interface IFormProps {
     title: string;
@@ -15,18 +15,12 @@ declare global {
     initialValues: any;
   }
 
-  export enum ValidationRules {
-    DEFAULT = 'DEFAULT',
-    DATE = 'DATE',
-    CURRENCY = 'CURRENCY',
-  }
-
   interface IOptions {
     label: string;
     value: string;
   }
 
-  export interface IField {
+  interface IField {
     id: string;
     label: string;
     multiline?: boolean;
