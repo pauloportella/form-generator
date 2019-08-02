@@ -3,12 +3,20 @@ import { Formik, Form as FormikForm, FormikActions, FormikProps } from 'formik';
 import { generateValidationSchema } from './services/forms';
 import { FormFields } from './components/FormFields/FormFields';
 
+export interface FormProps {
+  title: string;
+  legend?: string;
+  onSubmit: (values: any) => void;
+  fields: IField[];
+  initialValues: any;
+}
+
 export function Form({
   title,
   fields,
   initialValues,
   onSubmit,
-}: IFormProps): React.ReactElement {
+}: FormProps): React.ReactElement {
   const validationSchema = generateValidationSchema(fields);
 
   function handleSubmit(values: any, actions: FormikActions<any>) {

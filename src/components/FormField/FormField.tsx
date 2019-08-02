@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Field, FormikHandlers } from 'formik';
 
-export interface IFormFieldProps {
+export interface FormFieldProps {
   id: string;
   label: string;
   // select: boolean;
   value: InitialValue;
-  options?: any[];
+  options?: IOptions[];
   // multiline: boolean;
   component?: React.ReactNode;
   onChange: FormikHandlers['handleChange'];
@@ -25,7 +25,7 @@ export function FormField({
   // multiline,
   onChange,
   onBlur,
-}: IFormFieldProps): React.ReactElement {
+}: FormFieldProps): React.ReactElement {
   const optionsJSX = options && generateOptions(options);
 
   return (
