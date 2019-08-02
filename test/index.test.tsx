@@ -7,10 +7,19 @@ import {
 } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
+import { getInitialValues } from '../src/services/forms';
+
 import { Form } from '../src';
 
+const fields = [{}];
+
+const initialValues = getInitialValues(fields);
 const propsFn = () => ({
   title: 'Form Generator',
+  onSubmit: (values: any) => console.log(values),
+  fields: fields,
+  initialValues: initialValues,
+  isUpdate: false,
 });
 
 describe('Form Generator', () => {
