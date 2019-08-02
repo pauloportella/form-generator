@@ -2,8 +2,8 @@ import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Yup from 'yup';
-import { Form } from '../.';
 import { getInitialValues } from '../src/services/forms';
+import { Form } from '../.';
 
 const Input = (props: any): React.ReactElement => {
   return <input {...props.field} />;
