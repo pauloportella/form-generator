@@ -12,7 +12,6 @@ export interface IFormFieldProps {
   onChange: FormikHandlers['handleChange'];
   onBlur: FormikHandlers['handleBlur'];
   type?: string;
-  disabled: boolean;
 }
 
 export function FormField({
@@ -26,7 +25,6 @@ export function FormField({
   // multiline,
   onChange,
   onBlur,
-  disabled,
 }: IFormFieldProps): React.ReactElement {
   const optionsJSX = options && generateOptions(options);
 
@@ -43,7 +41,6 @@ export function FormField({
         // multiline={multiline}
         onChange={onChange}
         onBlur={onBlur}
-        disabled={disabled}
       >
         {optionsJSX}
       </Field>

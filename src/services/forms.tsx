@@ -64,9 +64,10 @@ export function getCountryOptions(): IOptions[] {
   }));
 }
 
-function Input(props: any): React.ReactElement {
-  return <input {...props} />;
-}
+const Input = (props: any): React.ReactElement => {
+  console.log(props.field);
+  return <input {...props.field} />;
+};
 
 export function getField(type: FieldType): React.ReactNode {
   switch (type) {
@@ -88,6 +89,6 @@ export function getField(type: FieldType): React.ReactNode {
     //   return DatePicker;
     case FieldType.TEXT:
     default:
-      return Input;
+      return (props: any) => <Input {...props} />;
   }
 }

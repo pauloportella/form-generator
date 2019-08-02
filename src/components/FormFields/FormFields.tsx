@@ -1,18 +1,16 @@
 import React from 'react';
 import { FormField } from '../FormField/FormField';
-import { getField, FieldType } from '../../services/forms';
+import { FieldType } from '../../services/forms';
 import { FormikProps } from 'formik';
 
 export interface IFormFieldsProps {
   fields: IField[];
   formikProps: FormikProps<any>;
-  isUpdate: boolean;
 }
 
 export function FormFields({
   fields,
   formikProps,
-  isUpdate,
 }: IFormFieldsProps): React.ReactElement {
   const { values, handleChange, handleBlur } = formikProps;
 
@@ -24,27 +22,26 @@ export function FormFields({
           label,
           fieldType = FieldType.TEXT,
           options,
+          component,
           // multiline = false,
           type,
-
-          disableOnUpdate = false,
         }) => {
           // const isSelect = Boolean(options && options.length);
-
+          console.log('formfields', fieldType);
           return (
             <FormField
               key={id}
               id={id}
               label={label}
+              component={component}
               // select={isSelect}
               // multiline={multiline}
               value={values[id]}
               options={options}
-              component={getField(fieldType)}
+              // component={getField(fieldType)}
               onChange={handleChange}
               onBlur={handleBlur}
               type={type}
-              disabled={isUpdate && disableOnUpdate}
             />
           );
         }

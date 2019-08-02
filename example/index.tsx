@@ -5,8 +5,14 @@ import * as Yup from 'yup';
 import { Form } from '../.';
 import { getInitialValues, FieldType } from '../src/services/forms';
 
+const Input = (props: any): React.ReactElement => {
+  console.log(props.field);
+  return <input {...props.field} />;
+};
+
 const fields = [
   {
+    component: Input,
     disableOnUpdate: true,
     fieldType: FieldType.TEXT,
     id: 'buyerName',
@@ -23,7 +29,6 @@ const propsFn = () => ({
   onSubmit: (values: any) => console.log(values),
   fields: fields,
   initialValues: initialValues,
-  isUpdate: false,
 });
 
 const App = () => {

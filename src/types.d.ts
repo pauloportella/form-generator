@@ -15,7 +15,6 @@ declare global {
     // onCancel: (arg0?: any) => void;
     fields: IField[];
     initialValues: any;
-    isUpdate: boolean;
   }
 
   export enum ValidationRules {
@@ -36,7 +35,7 @@ declare global {
     options?: IOptions[];
     initialValue?: InitialValue;
     fieldType?: FieldType;
-    disableOnUpdate?: boolean;
+    component?: React.ReactNode;
     validation?:
       | Yup.MixedSchema
       | Yup.StringSchema

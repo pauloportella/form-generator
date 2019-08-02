@@ -13,6 +13,7 @@ const fields = [
     disableOnUpdate: true,
     fieldType: FieldType.TEXT,
     id: 'buyerName',
+    initialValue: 'Hello',
     label: 'buyerName',
     validation: Yup.string().required(),
   },
@@ -25,7 +26,6 @@ const propsFn = () => ({
   onSubmit: (values: any) => console.log(values),
   fields: fields,
   initialValues: initialValues,
-  isUpdate: false,
 });
 
 describe('Form Generator', () => {
