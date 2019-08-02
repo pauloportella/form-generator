@@ -1,14 +1,15 @@
 import React from 'react';
 import { FormField } from 'components';
 import { getField } from 'services/form';
+import { FormikProps } from 'formik';
 
 export interface IFormFieldsProps {
   fields: IField[];
-  formikProps: any;
+  formikProps: FormikProps<any>;
   isUpdate: boolean;
 }
 
-export default function FormFields({
+export function FormFields({
   fields,
   formikProps,
   isUpdate,
