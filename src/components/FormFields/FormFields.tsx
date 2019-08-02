@@ -26,20 +26,20 @@ export function FormFields({
           label,
           fieldType = FieldType.TEXT,
           options,
-          multiline = false,
+          // multiline = false,
           type,
 
           disableOnUpdate = false,
         }) => {
-          const isSelect = Boolean(options && options.length);
+          // const isSelect = Boolean(options && options.length);
 
           return (
             <FormField
               key={id}
               id={id}
               label={label}
-              select={isSelect}
-              multiline={multiline}
+              // select={isSelect}
+              // multiline={multiline}
               value={values[id]}
               options={options}
               component={getField(fieldType)}
