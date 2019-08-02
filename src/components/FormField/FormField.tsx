@@ -5,7 +5,7 @@ export interface IFormFieldProps {
   id: string;
   label: string;
   select: boolean;
-  value: any;
+  value: InitialValue;
   options?: any[];
   multiline: boolean;
   component: React.ReactNode;
