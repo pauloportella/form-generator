@@ -54,7 +54,7 @@ export function FormField({
   );
 }
 
-function generateOptions(options: IOptions[]) {
+function generateOptions(options: IOptions[]): React.ReactNode {
   return options.map(({ label, value }, index) => (
     <option key={index} value={value} children={label} />
   ));
