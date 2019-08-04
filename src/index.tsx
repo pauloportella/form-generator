@@ -33,10 +33,9 @@ export function Form({
   }
 
   return (
-    <ContainerBase>
-      <div data-testid="title">
-        {isTitleComponent ? title : <h1>{title}</h1>}
-      </div>
+    <React.Fragment>
+      {isTitleComponent ? title : <h1>{title}</h1>}
+
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -56,22 +55,11 @@ export function Form({
           );
         }}
       />
-    </ContainerBase>
+    </React.Fragment>
   );
 }
 
-const ContainerBase: React.FC = ({ children }) => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      width: '100%',
-      height: '100%',
-    }}
-  >
-    {children}
-  </div>
-);
+const ContainerBase: React.FC = ({ children }) => <>{children}</>;
 
 Form.defaultProps = {
   container: ContainerBase,
