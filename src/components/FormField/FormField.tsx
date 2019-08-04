@@ -33,22 +33,20 @@ export function FormField({
   const optionsJSX = options && generateOptions(options);
 
   return (
-    <React.Fragment key={id}>
-      <Field
-        id={id}
-        name={id}
-        label={label}
-        type={type}
-        component={component}
-        value={value}
-        // select={select}
-        // multiline={multiline}
-        onChange={onChange}
-        onBlur={onBlur}
-      >
-        {optionsJSX}
-      </Field>
-    </React.Fragment>
+    <Field
+      id={id}
+      name={id}
+      label={label}
+      type={type}
+      component={component}
+      value={value}
+      // select={select}
+      // multiline={multiline}
+      onChange={onChange}
+      onBlur={onBlur}
+    >
+      {optionsJSX}
+    </Field>
   );
 }
 

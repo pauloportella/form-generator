@@ -31,7 +31,7 @@ export function Form({
   }
 
   return (
-    <>
+    <ContainerBase>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -50,7 +50,7 @@ export function Form({
           );
         }}
       />
-    </>
+    </ContainerBase>
   );
 }
 
@@ -60,6 +60,7 @@ const ContainerBase: React.FC = ({ children }) => (
       display: 'flex',
       flexDirection: 'column',
       width: '100vw',
+      height: '100vh',
     }}
   >
     {children}

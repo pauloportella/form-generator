@@ -34,8 +34,8 @@ const initialValues = getInitialValues(fields);
 const propsFn = () => ({
   title: 'Form Generator',
   onSubmit: (values: any) => console.log(values),
-  fields: fields,
-  initialValues: initialValues,
+  fields,
+  initialValues,
 });
 
 describe('Form Generator', () => {

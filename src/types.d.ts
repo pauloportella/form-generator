@@ -17,7 +17,7 @@ export interface IField {
   options?: IOption[];
   initialValue?: Values;
   component?: React.ReactNode;
-  gridItem?: React.ReactNode;
+  gridItem?: any;
   hasCustomOnChange?: boolean;
   hasCustomOnBlur?: boolean;
   validation?:
