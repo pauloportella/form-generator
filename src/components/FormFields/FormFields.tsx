@@ -6,12 +6,15 @@ import { IField } from 'types';
 export interface FormFieldsProps {
   fields: IField[];
   formikProps: FormikProps<any>;
+  labelComponent: any;
 }
 
 export function FormFields({
   fields,
   formikProps,
+  labelComponent: Label,
 }: FormFieldsProps): React.ReactElement {
+  const hasLabel = Boolean(Label);
   const {
     values,
     handleChange,
@@ -42,6 +45,11 @@ export function FormFields({
           return (
             <React.Fragment key={id}>
               <GridItem gridItem={gridItem}>
+                {hasLabel ? (
+                  <Label htmlFor={id}>{label}</Label>
+                ) : (
+                  <label htmlFor={id}>{label}</label>
+                )}
                 <FormField
                   id={id}
                   label={label}
