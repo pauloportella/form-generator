@@ -6,7 +6,7 @@ export interface FormFieldProps {
   label: string;
   // select: boolean;
   value: InitialValue;
-  options?: IOptions[];
+  options?: IOption[];
   // multiline: boolean;
   component?: React.ReactNode;
   onChange:
@@ -52,7 +52,7 @@ export function FormField({
   );
 }
 
-function generateOptions(options: IOptions[]): React.ReactNode {
+function generateOptions(options: IOption[]): React.ReactNode {
   return options.map(({ label, value }, index) => (
     <option key={index} value={value} children={label} />
   ));

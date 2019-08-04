@@ -8,7 +8,7 @@ declare global {
     id: string;
     label: string;
     multiline?: boolean;
-    options?: IOptions[];
+    options?: IOption[];
     initialValue?: InitialValue;
     component?: React.ReactNode;
     hasCustomOnChange: boolean;
@@ -22,7 +22,7 @@ declare global {
     type?: string;
   }
 
-  interface IOptions {
+  interface IOption {
     label: string;
     value: string;
   }

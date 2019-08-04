@@ -26,7 +26,7 @@ export function generateValidationSchema(fields: IField[]) {
 
 interface getValueFromOptionsProps {
   value: InitialValue;
-  options?: IOptions[];
+  options?: IOption[];
 }
 
 export function getValueFromOptions({
@@ -42,7 +42,7 @@ export function getValueFromOptions({
   return value;
 }
 
-export function getCountryOptions(): IOptions[] {
+export function getCountryOptions(): IOption[] {
   const names = getNames();
   return names.map((name: string) => ({
     label: name,
