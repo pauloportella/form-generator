@@ -3,7 +3,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Yup from 'yup';
 import { getInitialValues } from '../src/services/forms';
-import { Form, IField } from '../.';
+import { Form, IField, FormProps } from '../.';
+import { Grid } from '@material-ui/core';
 
 const Input = (props: any): React.ReactElement => {
   return <input {...props.field} placeholder={props.label} />;
@@ -31,14 +32,25 @@ const fields: IField[] = [
 const initialValues = getInitialValues(fields);
 
 function title(): React.ReactElement {
-  return <h1>Form Generator</h1>;
+  return <h2>Form Generator</h2>;
 }
 
-const propsFn = () => ({
+const Container: React.FC = ({ children }) => {
+  console.log('Container loads!');
+  return (
+    <Grid container spacing={4}>
+      {children}
+    </Grid>
+  );
+};
+
+const propsFn = (): FormProps => ({
   title: title(),
   onSubmit: (values: any) => console.log(values),
   fields: fields,
   initialValues: initialValues,
+  container: Container,
+  // container: (props: any) => <Container {...props} />,
 });
 
 const App = () => {

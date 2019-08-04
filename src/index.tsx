@@ -12,6 +12,7 @@ export interface FormProps {
   onSubmit: (values: Values) => void;
   fields: IField[];
   initialValues: Values;
+  container?: any;
 }
 
 export function Form({
@@ -19,10 +20,10 @@ export function Form({
   fields,
   initialValues,
   onSubmit,
+  container: Container,
 }: FormProps): React.ReactElement {
   const validationSchema = generateValidationSchema(fields);
-
-  const isTitleComponent = Boolean(title);
+  const isTitleComponent = Boolean(typeof title !== 'string');
 
   function handleSubmit(values: Values, actions: FormikActions<Values>) {
     onSubmit(values);
@@ -31,9 +32,6 @@ export function Form({
 
   return (
     <>
-      <div data-testid="title">
-        {isTitleComponent ? title : <h1>{title}</h1>}
-      </div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -41,16 +39,13 @@ export function Form({
         render={(props: FormikProps<Values>) => {
           return (
             <FormikForm>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  width: '100vw',
-                }}
-              >
+              <Container>
+                <div data-testid="title">
+                  {isTitleComponent ? title : <h1>{title}</h1>}
+                </div>
                 <FormFields fields={fields} formikProps={props} />
                 <button type="submit">Submit</button>
-              </div>
+              </Container>
             </FormikForm>
           );
         }}
@@ -58,3 +53,19 @@ export function Form({
     </>
   );
 }
+
+const ContainerBase: React.FC = ({ children }) => (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      width: '100vw',
+    }}
+  >
+    {children}
+  </div>
+);
+
+Form.defaultProps = {
+  container: ContainerBase,
+};
