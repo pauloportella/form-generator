@@ -3,7 +3,7 @@ import { FormField } from '../FormField/FormField';
 
 import { FormikProps } from 'formik';
 
-export interface IFormFieldsProps {
+export interface FormFieldsProps {
   fields: IField[];
   formikProps: FormikProps<any>;
 }
@@ -11,7 +11,7 @@ export interface IFormFieldsProps {
 export function FormFields({
   fields,
   formikProps,
-}: IFormFieldsProps): React.ReactElement {
+}: FormFieldsProps): React.ReactElement {
   const { values, handleChange, handleBlur } = formikProps;
 
   return (

@@ -4,22 +4,6 @@ import * as Yup from 'yup';
 declare global {
   type InitialValue = string | number | {};
 
-  interface IFormProps {
-    title: string;
-    legend?: string;
-    // submitText: string;
-    // cancelText: string;
-    onSubmit: (values: any) => void;
-    // onCancel: (arg0?: any) => void;
-    fields: IField[];
-    initialValues: any;
-  }
-
-  interface IOptions {
-    label: string;
-    value: string;
-  }
-
   interface IField {
     id: string;
     label: string;
@@ -34,5 +18,10 @@ declare global {
       | Yup.BooleanSchema
       | Yup.DateSchema;
     type?: string;
+  }
+
+  interface IOptions {
+    label: string;
+    value: string;
   }
 }
