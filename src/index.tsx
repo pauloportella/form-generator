@@ -7,7 +7,7 @@ import { IField } from 'types';
 export { IField, getInitialValues };
 
 export interface FormProps {
-  title: string | React.ReactNode;
+  title: any;
   legend?: string;
   onSubmit: (values: Values) => void;
   fields: IField[];

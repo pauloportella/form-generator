@@ -55,12 +55,12 @@ const fields: IField[] = [
 
 const initialValues = getInitialValues(fields);
 
-function title(): React.ReactElement {
+function Title(): React.ReactElement {
   return <h1>Form Generator</h1>;
 }
 
 const propsFn = (): FormProps => ({
-  title: title(),
+  title: Title,
   onSubmit: (values: any) => console.log(values),
   fields,
   initialValues,
