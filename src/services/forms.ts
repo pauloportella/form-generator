@@ -25,7 +25,7 @@ export function generateValidationSchema(fields: IField[]) {
   });
 }
 
-interface getValueFromOptionsProps {
+interface GetValueFromOptionsProps {
   value: Values;
   options?: IOption[];
 }
@@ -33,7 +33,7 @@ interface getValueFromOptionsProps {
 export function getValueFromOptions({
   value,
   options,
-}: getValueFromOptionsProps): Values {
+}: GetValueFromOptionsProps): Values {
   if (!options) return value;
 
   const result = options.find(option => option.value === value);

@@ -3,10 +3,35 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Yup from 'yup';
 import { getInitialValues } from '../src/services/forms';
-import { Form, IField } from '../.';
+import { Form, IField, FormProps } from '../.';
+import { Grid } from '@material-ui/core';
 
 const Input = (props: any): React.ReactElement => {
   return <input {...props.field} placeholder={props.label} />;
+};
+
+const Container: React.FC = ({ children }) => {
+  console.log('Container loads!');
+  return (
+    <Grid
+      container
+      direction="column"
+      alignItems="flex-start"
+      justify="center"
+      style={{ width: '100%' }}
+    >
+      {children}
+    </Grid>
+  );
+};
+
+const GridItem: React.FC = ({ children }) => {
+  console.log('GridItem loads!');
+  return (
+    <Grid item sm={12} md={12} lg={12}>
+      {children}
+    </Grid>
+  );
 };
 
 const fields: IField[] = [
@@ -17,6 +42,7 @@ const fields: IField[] = [
     label: 'Name',
     validation: Yup.string().required(),
     type: 'text',
+    gridItem: GridItem,
   },
   {
     component: Input,
@@ -24,17 +50,24 @@ const fields: IField[] = [
     initialValue: '',
     label: 'City',
     validation: Yup.string().required(),
-    type: 'text',
+    type: 'number',
+    gridItem: GridItem,
   },
 ];
 
 const initialValues = getInitialValues(fields);
 
-const propsFn = () => ({
-  title: 'Form Generatorr',
+function title(): React.ReactElement {
+  return <h1>Form Generator</h1>;
+}
+
+const propsFn = (): FormProps => ({
+  title: title(),
   onSubmit: (values: any) => console.log(values),
-  fields: fields,
-  initialValues: initialValues,
+  fields,
+  initialValues,
+  container: Container,
+  // container: (props: any) => <Container {...props} />,
 });
 
 const App = () => {

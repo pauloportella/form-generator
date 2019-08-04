@@ -34,15 +34,15 @@ const initialValues = getInitialValues(fields);
 const propsFn = () => ({
   title: 'Form Generator',
   onSubmit: (values: any) => console.log(values),
-  fields: fields,
-  initialValues: initialValues,
+  fields,
+  initialValues,
 });
 
 describe('Form Generator', () => {
   it('finds title', () => {
     const { getByTestId } = render(<Form {...propsFn()} />);
     const elem = getByTestId('title');
-    expect(elem.innerHTML).toBe('Form Generator');
+    expect(elem.innerHTML).toContain('Form Generator');
   });
 
   it('renders without crashing', () => {
