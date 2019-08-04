@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 import { FormikValues } from 'formik';
 import { getNames } from 'country-list';
+import { IField } from 'types';
 
 export function getInitialValues(fields: IField[]): FormikValues {
   return fields.reduce((acc, { id, initialValue }) => {
@@ -25,14 +26,14 @@ export function generateValidationSchema(fields: IField[]) {
 }
 
 interface getValueFromOptionsProps {
-  value: InitialValue;
-  options?: IOptions[];
+  value: Values;
+  options?: IOption[];
 }
 
 export function getValueFromOptions({
   value,
   options,
-}: getValueFromOptionsProps): InitialValue {
+}: getValueFromOptionsProps): Values {
   if (!options) return value;
 
   const result = options.find(option => option.value === value);
@@ -42,7 +43,7 @@ export function getValueFromOptions({
   return value;
 }
 
-export function getCountryOptions(): IOptions[] {
+export function getCountryOptions(): IOption[] {
   const names = getNames();
   return names.map((name: string) => ({
     label: name,

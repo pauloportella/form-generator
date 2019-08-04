@@ -6,13 +6,13 @@ import '@testing-library/jest-dom/extend-expect';
 
 import { getInitialValues } from '../src/services/forms';
 
-import { Form } from '../src';
+import { Form, IField } from '../src';
 
 const Input = (props: any): React.ReactElement => {
   return <input {...props.field} placeholder={props.label} />;
 };
 
-const fields = [
+const fields: IField[] = [
   {
     component: Input,
     id: 'buyerName',

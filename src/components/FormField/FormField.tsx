@@ -1,16 +1,20 @@
 import * as React from 'react';
-import { Field, FormikHandlers } from 'formik';
+import { Field, FormikHandlers, FormikActions } from 'formik';
 
 export interface FormFieldProps {
   id: string;
   label: string;
   // select: boolean;
-  value: InitialValue;
-  options?: IOptions[];
+  value: Values;
+  options?: IOption[];
   // multiline: boolean;
   component?: React.ReactNode;
-  onChange: FormikHandlers['handleChange'];
-  onBlur: FormikHandlers['handleBlur'];
+  onChange:
+    | FormikHandlers['handleChange']
+    | FormikActions<Values>['setFieldValue'];
+  onBlur:
+    | FormikHandlers['handleBlur']
+    | FormikActions<Values>['setFieldTouched'];
   type?: string;
 }
 
@@ -48,7 +52,7 @@ export function FormField({
   );
 }
 
-function generateOptions(options: IOptions[]): React.ReactNode {
+function generateOptions(options: IOption[]): React.ReactNode {
   return options.map(({ label, value }, index) => (
     <option key={index} value={value} children={label} />
   ));
