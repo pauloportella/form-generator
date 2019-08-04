@@ -71,6 +71,6 @@ interface GridItemProps {
 const GridItem = ({ gridItem, children }: GridItemProps) =>
   gridItem
     ? React.createElement(gridItem, {
-        children: children,
+        children,
       })
-    : React.createElement('div', { children: children });
+    : React.createElement('div', { children });
