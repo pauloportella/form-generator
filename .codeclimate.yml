@@ -43,3 +43,6 @@ checks:
 plugins:
   tslint:
     enabled: true
+    checks:
+      interface-name:
+        enabled: false
