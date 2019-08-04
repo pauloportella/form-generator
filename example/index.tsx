@@ -3,13 +3,15 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Yup from 'yup';
 import { getInitialValues } from '../src/services/forms';
-import { Form } from '../.';
+import { Form, IField } from '../.';
 
 const Input = (props: any): React.ReactElement => {
   return <input {...props.field} placeholder={props.label} />;
 };
 
-const fields = [
+console.log(IField);
+
+const fields: IField[] = [
   {
     component: Input,
     id: 'name',

@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 import { FormikValues } from 'formik';
 import { getNames } from 'country-list';
+import { IField } from 'types';
 
 export function getInitialValues(fields: IField[]): FormikValues {
   return fields.reduce((acc, { id, initialValue }) => {
