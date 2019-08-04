@@ -25,14 +25,14 @@ export function generateValidationSchema(fields: IField[]) {
 }
 
 interface getValueFromOptionsProps {
-  value: InitialValue;
+  value: Values;
   options?: IOption[];
 }
 
 export function getValueFromOptions({
   value,
   options,
-}: getValueFromOptionsProps): InitialValue {
+}: getValueFromOptionsProps): Values {
   if (!options) return value;
 
   const result = options.find(option => option.value === value);

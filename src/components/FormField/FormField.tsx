@@ -5,16 +5,16 @@ export interface FormFieldProps {
   id: string;
   label: string;
   // select: boolean;
-  value: InitialValue;
+  value: Values;
   options?: IOption[];
   // multiline: boolean;
   component?: React.ReactNode;
   onChange:
     | FormikHandlers['handleChange']
-    | FormikActions<InitialValue>['setFieldValue'];
+    | FormikActions<Values>['setFieldValue'];
   onBlur:
     | FormikHandlers['handleBlur']
-    | FormikActions<InitialValue>['setFieldTouched'];
+    | FormikActions<Values>['setFieldTouched'];
   type?: string;
 }
 
