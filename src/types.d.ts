@@ -11,6 +11,8 @@ declare global {
     options?: IOptions[];
     initialValue?: InitialValue;
     component?: React.ReactNode;
+    hasCustomOnChange: boolean;
+    hasCustomOnBlur: boolean;
     validation?:
       | Yup.MixedSchema
       | Yup.StringSchema

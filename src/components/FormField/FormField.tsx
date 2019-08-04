@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Field, FormikHandlers } from 'formik';
+import { Field, FormikHandlers, FormikActions } from 'formik';
 
 export interface FormFieldProps {
   id: string;
@@ -9,8 +9,12 @@ export interface FormFieldProps {
   options?: IOptions[];
   // multiline: boolean;
   component?: React.ReactNode;
-  onChange: FormikHandlers['handleChange'];
-  onBlur: FormikHandlers['handleBlur'];
+  onChange:
+    | FormikHandlers['handleChange']
+    | FormikActions<InitialValue>['setFieldValue'];
+  onBlur:
+    | FormikHandlers['handleBlur']
+    | FormikActions<InitialValue>['setFieldTouched'];
   type?: string;
 }
 
