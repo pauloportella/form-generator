@@ -1,24 +1,24 @@
 import * as React from 'react';
 import { Formik, Form as FormikForm, FormikActions, FormikProps } from 'formik';
-import { generateValidationSchema } from './services/forms';
+import { generateValidationSchema, getInitialValues } from './services/forms';
 import { FormFields } from './components/FormFields/FormFields';
 import { IField } from 'types';
 
-export { IField };
+export { IField, getInitialValues };
 
 export interface FormProps {
   title: string | React.ReactNode;
   legend?: string;
   onSubmit: (values: Values) => void;
   fields: IField[];
-  initialValues: Values;
+  initialValues?: Values;
   container?: any;
 }
 
 export function Form({
   title,
   fields,
-  initialValues,
+  initialValues = getInitialValues(fields),
   onSubmit,
   container: Container,
 }: FormProps): React.ReactElement {
