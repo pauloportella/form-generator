@@ -11,7 +11,6 @@ const Input = (props: any): React.ReactElement => {
 };
 
 const Container: React.FC = ({ children }) => {
-  console.log('Container loads!');
   return (
     <Grid
       container
@@ -26,7 +25,6 @@ const Container: React.FC = ({ children }) => {
 };
 
 const GridItem: React.FC = ({ children }) => {
-  console.log('GridItem loads!');
   return (
     <Grid item sm={12} md={12} lg={12}>
       {children}
