@@ -7,7 +7,7 @@ import { IField } from 'types';
 export { IField };
 
 export interface FormProps {
-  title: string;
+  title: string | React.ReactNode;
   legend?: string;
   onSubmit: (values: Values) => void;
   fields: IField[];
@@ -22,6 +22,8 @@ export function Form({
 }: FormProps): React.ReactElement {
   const validationSchema = generateValidationSchema(fields);
 
+  const isTitleComponent = Boolean(title);
+
   function handleSubmit(values: Values, actions: FormikActions<Values>) {
     onSubmit(values);
     actions.setSubmitting(false);
@@ -29,8 +31,9 @@ export function Form({
 
   return (
     <>
-      <h1 data-testid="title">{title}</h1>
-
+      <div data-testid="title">
+        {isTitleComponent ? title : <h1>{title}</h1>}
+      </div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}

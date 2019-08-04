@@ -24,14 +24,18 @@ const fields: IField[] = [
     initialValue: '',
     label: 'City',
     validation: Yup.string().required(),
-    type: 'text',
+    type: 'number',
   },
 ];
 
 const initialValues = getInitialValues(fields);
 
+function title(): React.ReactElement {
+  return <h1>Form Generator</h1>;
+}
+
 const propsFn = () => ({
-  title: 'Form Generatorr',
+  title: title(),
   onSubmit: (values: any) => console.log(values),
   fields: fields,
   initialValues: initialValues,
