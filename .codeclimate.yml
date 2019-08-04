@@ -48,3 +48,5 @@ plugins:
         enabled: false
       object-literal-shorthand:
         enabled: false
+      quotemark:
+        enabled: false
