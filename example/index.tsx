@@ -9,8 +9,6 @@ const Input = (props: any): React.ReactElement => {
   return <input {...props.field} placeholder={props.label} />;
 };
 
-console.log(IField);
-
 const fields: IField[] = [
   {
     component: Input,
