@@ -13,6 +13,7 @@ declare global {
 export interface IField {
   id: string;
   label: string;
+  placeholder?: string;
   multiline?: boolean;
   options?: IOption[];
   initialValue?: Values;

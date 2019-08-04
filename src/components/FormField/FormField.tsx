@@ -7,6 +7,7 @@ export interface FormFieldProps {
   // select: boolean;
   value: Values;
   options?: IOption[];
+  placeholder?: string;
   // multiline: boolean;
   component?: React.ReactNode;
   onChange:
@@ -24,6 +25,7 @@ export function FormField({
   type = 'text',
   component,
   value,
+  placeholder,
   // select,
   options,
   // multiline,
@@ -40,6 +42,7 @@ export function FormField({
       type={type}
       component={component}
       value={value}
+      placeholder={placeholder}
       // select={select}
       // multiline={multiline}
       onChange={onChange}

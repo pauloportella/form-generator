@@ -32,6 +32,7 @@ export function FormFields({
           options,
           component,
           type,
+          placeholder,
           hasCustomOnChange = false,
           hasCustomOnBlur = false,
           gridItem,
@@ -54,6 +55,7 @@ export function FormFields({
                   id={id}
                   label={label}
                   component={component}
+                  placeholder={placeholder}
                   // select={isSelect}
                   // multiline={multiline}
                   value={values[id]}
