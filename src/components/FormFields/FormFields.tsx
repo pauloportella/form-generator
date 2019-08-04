@@ -1,11 +1,11 @@
 import React from 'react';
 import { FormField } from '../FormField/FormField';
-import { FormikProps } from 'formik';
+import { FormikProps, FormikValues } from 'formik';
 import { IField } from 'types';
 
 export interface FormFieldsProps {
   fields: IField[];
-  formikProps: FormikProps<any>;
+  formikProps: FormikProps<FormikValues>;
 }
 
 export function FormFields({
