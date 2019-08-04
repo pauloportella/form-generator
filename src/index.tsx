@@ -13,6 +13,7 @@ export interface FormProps {
   fields: IField[];
   initialValues?: Values;
   container?: any;
+  labelComponent?: any;
 }
 
 export function Form({
@@ -21,6 +22,7 @@ export function Form({
   initialValues = getInitialValues(fields),
   onSubmit,
   container: Container,
+  labelComponent = null,
 }: FormProps): React.ReactElement {
   const validationSchema = generateValidationSchema(fields);
   const isTitleComponent = Boolean(typeof title !== 'string');
@@ -32,6 +34,9 @@ export function Form({
 
   return (
     <ContainerBase>
+      <div data-testid="title">
+        {isTitleComponent ? title : <h1>{title}</h1>}
+      </div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -40,10 +45,11 @@ export function Form({
           return (
             <FormikForm>
               <Container>
-                <div data-testid="title">
-                  {isTitleComponent ? title : <h1>{title}</h1>}
-                </div>
-                <FormFields fields={fields} formikProps={props} />
+                <FormFields
+                  fields={fields}
+                  formikProps={props}
+                  labelComponent={labelComponent}
+                />
                 <button type="submit">Submit</button>
               </Container>
             </FormikForm>
