@@ -8,12 +8,12 @@ export { IField, getInitialValues };
 
 export interface FormProps {
   title: any;
-  legend?: string;
   onSubmit: (values: Values) => void;
   fields: IField[];
   initialValues?: Values;
   container?: any;
   labelComponent?: any;
+  buttonComponent?: any;
 }
 
 export function Form({
@@ -23,9 +23,11 @@ export function Form({
   onSubmit,
   container: Container,
   labelComponent = null,
+  buttonComponent = null,
 }: FormProps): React.ReactElement {
   const validationSchema = generateValidationSchema(fields);
-  const isTitleComponent = Boolean(typeof title !== 'string');
+  const hasTitleComponent = Boolean(typeof title !== 'string');
+  const hasButtonComponent = Boolean(buttonComponent);
 
   function handleSubmit(values: Values, actions: FormikActions<Values>) {
     onSubmit(values);
@@ -34,7 +36,7 @@ export function Form({
 
   return (
     <React.Fragment>
-      {isTitleComponent ? title : <h1>{title}</h1>}
+      {hasTitleComponent ? title() : <h1>{title}</h1>}
 
       <Formik
         initialValues={initialValues}
@@ -49,7 +51,17 @@ export function Form({
                   formikProps={props}
                   labelComponent={labelComponent}
                 />
-                <button type="submit">Submit</button>
+
+                {hasButtonComponent ? (
+                  buttonComponent()
+                ) : (
+                  <button
+                    type="submit"
+                    style={{ marginTop: 12, marginBottom: 12 }}
+                  >
+                    Submit
+                  </button>
+                )}
               </Container>
             </FormikForm>
           );
