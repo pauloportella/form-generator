@@ -59,13 +59,17 @@ function Title(): React.ReactElement {
   return <h1>Form Generator</h1>;
 }
 
+function Button(): React.ReactElement {
+  return <button type="submit">Add</button>;
+}
+
 const propsFn = (): FormProps => ({
   title: Title,
   onSubmit: (values: any) => console.log(values),
   fields,
   initialValues,
   container: Container,
-  // container: (props: any) => <Container {...props} />,
+  buttonComponent: Button,
 });
 
 const App = () => {
