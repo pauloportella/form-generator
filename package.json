@@ -14,8 +14,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --env=jsdom",
-    "coverage": "tsdx test --env=jsdom --coverage && cat ./coverage/lcov.info | codacy-coverage --token ced9262077bc4c8e925a65fefe4c49ab --username pauloportella --projectName form-generator"
+    "test": "tsdx test --env=jsdom"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -38,14 +37,11 @@
   "devDependencies": {
     "@testing-library/jest-dom": "4.0.0",
     "@testing-library/react": "8.0.7",
-    "@types/country-list": "2.1.0",
     "@types/jest": "24.0.17",
     "@types/node": "12.6.9",
     "@types/react": "16.8.24",
     "@types/react-dom": "16.8.5",
     "@types/yup": "0.26.22",
-    "codacy-coverage": "3.4.0",
-    "country-list": "2.1.1",
     "husky": "3.0.2",
     "prettier": "1.18.2",
     "pretty-quick": "1.11.1",

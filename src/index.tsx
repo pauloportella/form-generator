@@ -19,7 +19,7 @@ export interface FormProps {
 export function Form({
   title,
   fields,
-  initialValues = getInitialValues(fields),
+  initialValues = fields && getInitialValues(fields),
   onSubmit,
   container: Container,
   labelComponent = null,
