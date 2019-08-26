@@ -40,7 +40,7 @@
     "@types/jest": "24.0.17",
     "@types/node": "12.6.9",
     "@types/react": "16.8.24",
-    "@types/react-dom": "16.8.5",
+    "@types/react-dom": "16.9.0",
     "@types/yup": "0.26.23",
     "husky": "3.0.2",
     "prettier": "1.18.2",
