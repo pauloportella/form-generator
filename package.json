@@ -31,7 +31,7 @@
     "trailingComma": "es5"
   },
   "dependencies": {
-    "formik": "1.5.8",
+    "formik": "2.2.9",
     "yup": "0.27.0"
   },
   "devDependencies": {
