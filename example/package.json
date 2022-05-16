@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@types/react": "16.9.2",
-    "@types/react-dom": "16.9.0",
+    "@types/react-dom": "16.9.16",
     "parcel": "1.12.3",
     "typescript": "3.6.2"
   }
